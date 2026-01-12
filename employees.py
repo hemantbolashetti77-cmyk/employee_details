@@ -10,30 +10,17 @@ def calculate_bonus(present_days):
     else:
         return 0
 
-def main():
-    print("=== Employee Bonus Calculator ===")
+if len(sys.argv) != 4:
+    print("Usage: python employee.py <emp_id> <name> <present_days>")
+    sys.exit(0)
 
-    try:
-        if len(sys.argv) == 4:
-            emp_id = int(sys.argv[1])
-            name = sys.argv[2]
-            present_days = int(sys.argv[3])
-        else:
-            emp_id = int(input("Enter Employee ID: "))
-            name = input("Enter Employee Name: ")
-            present_days = int(input("Enter Present Days: "))
+emp_id = int(sys.argv[1])
+name = sys.argv[2]
+present_days = int(sys.argv[3])
 
-        bonus = calculate_bonus(present_days)
+bonus = calculate_bonus(present_days)
 
-        print("\n--- Employee Details ---")
-        print("Employee ID:", emp_id)
-        print("Employee Name:", name)
-        print("Present Days:", present_days)
-        print("Bonus:", bonus)
-
-    except ValueError:
-        print("Invalid input! Please enter numeric values correctly.")
-
-# 🔑 CRITICAL LINE
-if __name__ == "__main__":
-    main()
+print("Employee ID:", emp_id)
+print("Employee Name:", name)
+print("Present Days:", present_days)
+print("Bonus:", bonus)
