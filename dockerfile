@@ -1,9 +1,9 @@
 FROM python:3.13-slim
 
-WORKDIR /employee
+WORKDIR /employees
 
 COPY  . .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-CMD ["python", "employee.py"]
+CMD ["python", "employees.py"]
